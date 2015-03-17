@@ -1,13 +1,17 @@
 require "pry"
 require "pg"
+require_relative "connection"
 
-CONN = PG.connect(
-  dbname: 'd2hpm89qtdv47d',
-  port: 5432,
-  user: 'bkjrkznvzprjwp',
-  host: 'ec2-50-19-249-214.compute-1.amazonaws.com',
-  password: 'PqquHIEvJIDgLAakmsYPEWURmF'
-  )
+# CONN = PG.connect(
+#   dbname: 'd2hpm89qtdv47d',
+#   port: 5432,
+#   user: 'bkjrkznvzprjwp',
+#   host: 'ec2-50-19-249-214.compute-1.amazonaws.com',
+#   password: 'PqquHIEvJIDgLAakmsYPEWURmF'
+#   )
+
+con = Connection.start
+CONN = con.line
 
 class Contact
  
