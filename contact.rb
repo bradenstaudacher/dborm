@@ -1,6 +1,7 @@
 require "pry"
 require "pg"
 require_relative "connection"
+require "active_record"
 
 # CONN = PG.connect(
 #   dbname: 'd2hpm89qtdv47d',
@@ -11,9 +12,9 @@ require_relative "connection"
 #   )
 
 con = Connection.start
-CONN = con.line
+CONN = con.line1
 
-class Contact
+class Contact < ActiveRecord::Base
  
   attr_accessor :firstname, :lastname, :email
   attr_reader :id
