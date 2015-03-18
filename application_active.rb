@@ -1,5 +1,11 @@
-require_relative 'contact_active'
 require "pry"
+require "pg"
+require "active_record"
+
+require_relative 'contact_active'
+require_relative "connection_active"
+
+Connection.new
 
 case
 
