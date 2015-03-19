@@ -35,7 +35,7 @@ when ARGV[0] == "list"
   puts "Total number of records #{Contact.all.count}"
 
 when ARGV[0] == "find"
-  puts "Enter match"
+  puts "Enter search term:"
   term = STDIN.gets.chomp
   term = "%#{term}%"
   pp Contact.where("firstname LIKE :term OR lastname LIKE :term OR email LIKE :term", 
